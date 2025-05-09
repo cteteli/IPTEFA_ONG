@@ -4,26 +4,209 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IPTEFA-ONG</title>
-  <style>
-    <script src="script.js"></script>
-    body { font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0; }
-    header, footer { background-color: #2f4f4f; color: #fff; padding: 1rem 2rem; }
-    nav a { color: #fff; margin: 0 1rem; text-decoration: none; }
-    .container { padding: 2rem; max-width: 1000px; margin: auto; background-color: white; }
-    h1, h2, h3 { color: #2f4f4f; }
-    ul { list-style: disc inside; }
-  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <!-- CSS principal -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #2f4f4f;
+      color: #fff;
+      padding: 1rem 2rem;
+      /* Animation d'apparition */
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+    header {
+      animation-delay: 0.1s;
+    }
+    footer {
+      animation-delay: 2s;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .image-texte {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .image-texte img.image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      /* Animation de rebond à l'apparition */
+      transform: scale(0.8);
+      opacity: 0;
+      animation: logoBounce 0.8s 0.2s cubic-bezier(0.23, 1.26, 0.32, 1) forwards;
+    }
+    @keyframes logoBounce {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .image-texte .texte h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 1px;
+      color: #fff;
+      opacity: 0;
+      animation: fadeInLeft 1s 0.5s forwards;
+    }
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      transition: background 0.3s, color 0.3s, transform 0.15s;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      background: transparent;
+    }
+    nav a::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: rgba(255,215,0,0.15);
+      border-radius: 50%;
+      width: 200%;
+      height: 200%;
+      transition: transform 0.4s;
+      z-index: -1;
+    }
+    nav a:hover, nav a:focus {
+      background-color: #416d6d;
+      text-decoration: underline;
+      color: #ffd700;
+      outline: none;
+      transform: translateY(-2px) scale(1.06);
+    }
+    nav a:hover::before, nav a:focus::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(47, 79, 79, 0.08);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUpFade 1.1s 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes slideUpFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h1, h2, h3 {
+      color: #2f4f4f;
+    }
+    ul {
+      list-style: disc inside;
+      margin-bottom: 1.5rem;
+    }
+    .rubrique-img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1.5rem auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      /* Animation d'apparition */
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeInImg 1s 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+      transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s;
+    }
+    .rubrique-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 32px rgba(47,79,79,0.12);
+    }
+    @keyframes fadeInImg {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    footer {
+      text-align: center;
+      font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 700px) {
+      .container {
+        padding: 1rem;
+      }
+      .image-texte {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      nav a {
+        margin: 0;
+        padding: 0.35rem 0.7rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>  
+  <header>
     <section class="image-texte">
-    <img src="logo 2.png" class="image">
-    <div class="texte">
-        <h2>INTITIATIVE PEUPLES TERRES ET FORETS D’AFRIQUE- ONG</h2>
-    </div>
-</section>
-    
+      <img src="logo 2.png" class="image" alt="Logo IPTEFA-ONG">
+      <div class="texte">
+        <h2>INITIATIVE PEUPLES TERRES ET FORÊTS D’AFRIQUE - ONG</h2>
+      </div>
+    </section>
     <nav>
       <a href="index.html">Accueil</a>
       <a href="apropos.html">À propos</a>
@@ -35,17 +218,16 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <div class="container">
-
-<h2>Protéger la biodiversité, améliorer les conditions de vie</h2>
-<p>Bienvenue sur le site de IPTEFA-ONG, une organisation engagée dans la préservation de l’environnement et le développement durable des communautés africaines.</p>
-<p>Notre approche combine restauration écologique, éducation environnementale et développement socio-économique pour garantir que l’Homme et la Nature prospèrent ensemble.</p>
-<ul>
-  
-</ul>
-<p><strong>Rejoignez-nous pour construire un avenir plus vert !</strong></p>
-  <img src="image2.jpg" class="rubrique-img">
-  </div>
+  <main class="container">
+    <h2>Protéger la biodiversité, améliorer les conditions de vie</h2>
+    <p>Bienvenue sur le site de IPTEFA-ONG, une organisation engagée dans la préservation de l’environnement et le développement durable des communautés africaines.</p>
+    <p>Notre approche combine restauration écologique, éducation environnementale et développement socio-économique pour garantir que l’Homme et la Nature prospèrent ensemble.</p>
+    <ul>
+      <!-- Tu peux ajouter ici les points clés ou missions de ton ONG -->
+    </ul>
+    <p><strong>Rejoignez-nous pour construire un avenir plus vert !</strong></p>
+    <img src="image2.jpg" class="rubrique-img" alt="Image écologique">
+  </main>
   <footer>
     <p>&copy; 2025 IPTEFA-ONG. Tous droits réservés.</p>
   </footer>
