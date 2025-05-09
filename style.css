@@ -53,3 +53,18 @@ ul li {
     display: block;
     margin: 10px auto; /* Centrage automatique */
 }
+.image-texte {
+    display: flex; /* Active l'affichage côte à côte */
+    align-items: center; /* Centre verticalement l'image et le texte */
+    gap: 20px; /* Ajoute un espacement entre les éléments */
+}
+
+.image {
+    width: 40%; /* Ajuste la taille de l'image */
+    border-radius: 10px;
+}
+
+.texte {
+    width: 60%; /* Donne plus d’espace au texte */
+    font-size: 18px;
+}
