@@ -239,6 +239,15 @@
   <footer>
     <p>&copy; 2025 IPTEFA-ONG. Tous droits réservés.</p>
   </footer>
-  <script src="script.js"></script>
+  <script>
+    // Script pour défiler les images de fond du header
+    const slides = document.querySelectorAll('.bg-slide');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4800); // Changement toutes les 4.8 secondes
+  </script>
 </body>
 </html>
