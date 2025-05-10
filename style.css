@@ -11,7 +11,7 @@ body {
 /* ----------- Header Accueil avec Image de Fond ----------- */
 header.home-header {
   background: linear-gradient(rgba(44,62,80,0.78), rgba(44,62,80,0.65)),
-              url('header-bg.jpg') center/cover no-repeat;
+              url('header-bg.png') center/cover no-repeat;
   color: #fff;
   padding: 2.7rem 2rem 2rem 2rem;
   box-shadow: 0 2px 10px rgba(44,62,80,0.13);
