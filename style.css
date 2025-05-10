@@ -333,7 +333,7 @@ header.home-header {
 .home-header .header-content {
   position: relative;
   z-index: 2;
-  background: linear-gradient(90deg,rgba(44,62,80,0.80) 60%,rgba(44,62,80,0.65) 100%);
+  background: linear-gradient(dddbd9,rgba(44,62,80,0.80) 60%,rgba(44,62,80,0.65) 100%);
   padding-top: 2.2rem;
   padding-bottom: 1.2rem;
   padding-left: 2rem;
