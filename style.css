@@ -33,7 +33,7 @@ header.home-header {
 header:not(.home-header),
 footer {
   background: linear-gradient(90deg, #16AB32 60%, #219150 100%);
-  color: #fff;
+  color: #e0dcdc;
   padding: 1.1rem 2rem;
   box-shadow: 0 2px 10px rgba(44,62,80,0.13);
   opacity: 0;
