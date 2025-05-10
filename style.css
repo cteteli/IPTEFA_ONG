@@ -331,6 +331,9 @@ header.home-header {
   justify-content: flex-end;
 }
 .home-header .header-content {
+  background: none;
+}
+header.home-header nav {
   position: relative;
   z-index: 2;
   background: linear-gradient(dddbd9,rgba(44,62,80,0.80) 60%,rgba(44,62,80,0.65) 100%);
