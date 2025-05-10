@@ -355,3 +355,13 @@ header.home-header nav {
   }
   .home-header .header-content { padding-top: 1.3rem; padding-bottom: 1rem;}
 }
+}
+.imagepar {
+    width: 100%;
+    max-width: 800px; /* Limite la taille pour éviter qu'elles deviennent trop grandes */
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 10px auto; /* Centrage automatique */
+}
